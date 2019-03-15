@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div id="app">
+  <div class="container" @mousemove="Move"></div>
+  <div class="content">
+    <p>X: <span>{{offx}}</span></p>
+    <p>Y: <span>{{offy}}</span></p>
+  </div>
+</div>
+
+<script>  
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    offx: 0,
+    offy: 0
+  },
+  methods: {
+    Move(event){
+      this.offx = event.offsetX
+      this.offy = event.offsetY
+    }
+  }
+})
+
+</script>
+
+<style> 
+
+.container{
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+  margin: 20px auto 20px;
+}
+
+.content{
+  height: 200px;
+  width: 200px;
+  margin: 0px auto;
+}
+
+</style>
+
+
+</body>
+</html>

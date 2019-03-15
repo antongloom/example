@@ -1,0 +1,58 @@
+<div id="block">
+  <div id="progress"></div>
+</div>
+
+<p class="hidden-block">Привет</p>
+
+
+<script>
+
+	function userPrgress(time){
+	var start = 20;
+	var time = Math.round(time*1000/100);
+	var progressElement = document.getElementById('progress');
+	var intervalId = setInterval(function(){
+		if(start>100){
+			clearInterval(intervalId);
+			userProgressCallback();
+		}
+		else{
+			progressElement.style.width = start + '%';
+		}
+		start +=20;
+	}, time)
+
+}
+
+function userProgressCallback(){
+	document.querySelector('.hidden-block').style.display = 'block';
+}
+
+userPrgress(100);
+
+</script>
+
+<style>
+	#block{
+	width: 500px;
+	height: 40px;
+	border-radius: 7px;
+	border: 1px solid #000;
+	margin: 50px auto;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+#progress{
+	height: 40px;
+	width: 20%;
+	background: blue;
+}
+
+.hidden-block{
+	display: none;
+	width: 500px;
+	height: 40px;
+	margin: 50px auto;
+}
+</style>

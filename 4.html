@@ -1,0 +1,87 @@
+
+
+
+<div class="content">
+  <h1>Бургер меню</h1>
+  <p><input type="checkbox" disabled="disabled" checked data-cost="10" data-kkal="75" class="menu"> Булочка</p>
+  <hr> 
+  <h1>Наполнение</h1>
+  <p><input type="checkbox" checked data-cost="20" data-kkal="200" class="menu"> Котлета</p>
+  <p><input type="checkbox" data-cost="12" data-kkal="100" class="menu"> Сыр</p>
+  <p><input type="checkbox" data-cost="8" data-kkal="50" class="menu"> Салат</p>
+  <p><input type="checkbox" data-cost="2" data-kkal="20" class="menu"> Огурец</p>
+  <p><input type="checkbox" data-cost="4" data-kkal="67" class="menu"> Помидор</p>
+  <hr>
+  <h1>Соусы</h1>
+  <p><input type="checkbox" checked data-cost="5" data-kkal="10" class="menu"> Томатный кетчуп</p>
+  <p><input type="checkbox" data-cost="5" data-kkal="5" class="menu"> Горчица</p>
+  <p><input type="checkbox" data-cost="5" data-kkal="12" class="menu"> Майонез</p>
+  <p><input type="checkbox" data-cost="10" data-kkal="35" class="menu"> Сыучанский соус</p>
+  <hr>
+  <h1>Итого:</h1>
+  <p>Калорийность: <span id="kkal"></span></p>
+  <p>Цена: <span id="cost"></span></p>
+  <button id="result">Рассчитать</button>
+</div>
+
+
+
+  
+<script>  
+
+var result = document.getElementById('result');
+result.addEventListener('click', getResult);
+
+//var checkbox = document.body.children[0];
+//checkbox.addEventListener('change', getResult);
+
+
+
+getResult();
+
+function getResult(){
+  var menu = document.getElementsByClassName('menu');
+  var kkal = 0;
+  var cost = 0;
+  for(var i = 0; i < menu.length; i++){
+    if(menu[i].checked){
+      cost += parseFloat(menu[i].getAttribute('data-cost'));
+      kkal += parseFloat(menu[i].getAttribute('data-kkal'));
+      } 
+    }
+    document.getElementById('cost').innerHTML = cost;
+    document.getElementById('kkal').innerHTML = kkal;
+  }
+
+
+</script>
+
+<style> 
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  width: 600px;
+  margin: 100px auto;
+  }
+  h1{
+    font-size: 30px;
+    padding-bottom: 20px;
+  } 
+  hr{
+    margin-bottom: 15px;
+  }
+  p{
+    padding-bottom: 15px;
+  }
+
+button{
+  display: block;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+</style>

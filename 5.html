@@ -1,0 +1,19 @@
+<script>  
+
+function info(){
+  console.log('Запуск через неделю')
+}
+
+function checkTime(){
+  var timeSecond = Math.round(Date.now()/1000);
+  if( timeSecond > 1552568540 ){
+     console.log('Запуск через неделю')
+   }
+  console.log(timeSecond);
+}
+
+checkTime();
+
+/*https://www.unixtimestamp.com/   - ссылка для выбора времени*/
+
+</script>

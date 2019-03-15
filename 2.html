@@ -1,0 +1,23 @@
+<div id="test"></div>
+<p> 
+  X: <span id="offx">0</span><br>
+  Y: <span id="offy">0</span>
+</p>
+
+<script>
+	document.querySelector('#test').onmousemove = function(event){
+	  event = event || window.event;
+	  document.querySelector('#offx').innerHTML = event.offsetX;
+	  document.querySelector('#offy').innerHTML = event.offsetY;
+	}	
+</script>
+
+<style>
+	#test{
+	width: 200px;
+	height: 200px;
+	border: 1px solid;
+	margin: 100px auto;
+}
+
+</style>

@@ -1,0 +1,19 @@
+<img src="img/doctor2.png" alt="Img">
+<img src="img/doctor2.png" alt="Img">
+
+
+<script>
+	document.onclick = function(event){
+	event = event || window.event;
+	if(event.target.tagName === "IMG"){
+		event.target.classList.add('border');
+	}
+}
+</script>
+
+
+<style>
+.border{
+	border: 2px solid #000;
+}
+</style>
