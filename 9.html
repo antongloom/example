@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры js</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<input type="text" id="nadbavka">
+<button id="calc">Calc</button>
+<p id="text"></p>
+
+<script>
+
+let btn = document.getElementById('calc');
+btn.addEventListener('click', getNumber);
+
+function getNumber(){
+	let value = document.getElementById('nadbavka').value;
+	let text = document.getElementById('text');
+	value = parseInt(value);
+	if(value>=0 && value <3){
+		text.innerHTML = '10%';
+	}else if(value>=10 && value <20){
+		text.innerHTML = '20%';
+	}else {
+		text.innerHTML = 'Error!';
+	}
+}
+
+
+</script>
+
+<style>
+	
+</style>
+	
+</body>
+</html>
+
+
+

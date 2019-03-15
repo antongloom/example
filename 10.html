@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Debager</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<a href="#">First</a>
+<a href="https://yandex.ru/">Second</a>
+<a href="#">Third</a>
+<a href="https://www.google.com/">Fourth</a>
+
+
+
+<script>
+
+let h = document.getElementsByTagName('a');
+for(let i = 0; i<h.length; i++){
+	if(h[i].getAttribute('href') === '#'){
+		h[i].style.color = 'red';
+	}
+}
+
+
+</script>
+
+<style>
+	
+</style>
+	
+</body>
+</html>
+
+
+
