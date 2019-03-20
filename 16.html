@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры на js</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div id="number"></div>
+
+
+
+<script>
+
+
+
+let PI = 0;
+let a = 1;
+let b = 3;
+
+myPI();
+
+function myPI(){
+	PI += (4/a) - (4/b);
+	a = a+4;
+	b = b+4;
+	let number = document.getElementById('number');
+	number.innerHTML = PI;
+	setTimeout(myPI, 300);
+}
+
+
+
+</script>
+
+<style>
+	
+</style>
+	
+</body>
+</html>
+
+
+

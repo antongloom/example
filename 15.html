@@ -7,13 +7,31 @@
 </head>
 <body>
 
+<canvas id="myChart"></canvas>
 
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <script>
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
 
+    // The data for our dataset
+    data: {
+        labels: ['заяц','ёж', 'волк'],
+        datasets: [{
+            label: 'Вес зверей',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [5, 2, 30]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
 
 </script>
 

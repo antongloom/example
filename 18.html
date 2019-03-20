@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры на js</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="main-block"></div>
+
+
+
+<script>
+
+function drawChess(){
+	let mainBlock = document.querySelector('.main-block');
+	let block;
+	let flag = true;
+
+
+	let figure = {
+        0 : ['-263px -19px', '-484px -22px', '-372px -17px', '-150px -16px', '-150px -16px','-372px -17px', '-484px -22px','-263px -19px'],
+        1 : ['-595px -19px', '-595px -19px', '-595px -19px', '-595px -19px', '-595px -19px','-595px -19px', '-595px -19px','-595px -19px'],
+        6 : ['-595px -116px', '-595px -116px', '-595px -116px', '-595px -116px', '-595px -116px','-595px -116px', '-595px -116px','-595px -116px'],
+        7 : ['-263px -116px', '-484px -116px', '-372px -116px', '-150px -116px', '-150px -116px','-372px -116px', '-484px -116px','-263px -116px'],
+    };
+
+
+	for(let i=0; i<8; i++){
+		for(let j=0; j<8; j++){
+			if(j==0) {flag = !flag}
+
+			block = document.createElement('div');
+			
+			if(flag){
+				block.className = 'block black'
+			}else{
+				block.className = 'block wite'
+			}
+
+			if (figure[i]!==undefined && figure[i][j]!==undefined){
+                block.style.backgroundImage = 'url(./img/blackboard.png)';
+                block.style.backgroundPosition = figure[i][j];
+            }
+
+			mainBlock.appendChild(block);
+			flag = !flag;
+		}
+	}
+}
+
+drawChess();
+
+</script>
+
+<style>
+.main-block{
+	width: 560px;
+	height: 560px;
+	margin: 30px auto;
+	border: 1px solid #000;
+}
+
+.block{
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+
+.black{
+	background: #000;
+}
+
+.wite{
+	background: #fff;
+}
+</style>
+	
+</body>
+</html>
+
+
+
