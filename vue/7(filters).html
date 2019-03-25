@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры по Vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div class="simple">
+  <button @click = "show = !show">Первый</button>
+  <div class="text" v-if="show">{{text}}</div>
+  <div>{{text | length}}</div>
+  <div>{{text | reverse | upper}}</div>
+  <div>{{textLength}}</div>
+</div>
+
+
+
+<script>  
+
+
+
+
+
+
+new Vue({
+  el: '.simple',
+  data: {
+    show: true,
+    text: 'Show Text1'
+  },
+  computed: {
+    textLength(){
+      return this.text.length
+    }
+  },
+  filters: {
+    length(some){
+      return some.length
+    },
+    reverse(str){
+      return str.split('').reverse().join('');
+    },
+    upper(str){
+      return str.toUpperCase();
+    }
+  }
+})
+
+
+</script>
+
+<style> 
+
+
+
+</style>
+
+
+</body>
+</html>

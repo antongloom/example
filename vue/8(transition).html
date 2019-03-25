@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры по Vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div class="simple">
+  <button @click = "show = !show">Первый</button>
+  <transition name="fade" appear>
+    <div class="text" v-if="show">
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+    </div>
+  </transition>
+</div>
+
+
+
+<script>  
+
+new Vue({
+  el: '.simple',
+  data: {
+    show: true
+  },
+  computed: {
+    
+  }
+})
+
+
+</script>
+
+<style> 
+
+.text{
+  background: green;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+
+.fade-enter{  /*Задается на секунду совершения анимации*/
+  opacity: 0;
+}
+
+.fade-enter-active{ /*Жив в течении всей анимации*/
+  transition: opacity 0.5s;
+}
+
+.fade-enter-to{
+
+}
+
+.fade-leave{
+
+}
+
+.fade-leave-active{
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.fade-enter-to{
+
+}
+
+
+
+
+</style>
+
+
+</body>
+</html>

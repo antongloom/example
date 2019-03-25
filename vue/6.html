@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры по Vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div class="simple1">
+  <button @click = "show = !show">Первый</button>
+  <div class="text" v-if="show">Show Text1</div>
+</div>
+
+<div class="simple2">
+  <button @click = "show = !show">Второй</button>
+  <div class="text" v-if="show">Show Text2</div>
+</div>
+
+<script>  
+
+/*
+new Vue({
+  el: '.simple1',
+  data: {
+    show: true,
+    updates: 0
+  },
+  updated(){
+    this.updates++,
+    console.log(this.updates)
+  }
+});
+
+
+new Vue({
+  el: '.simple2',
+  data: {
+    show: false,
+    updates: 0
+  },
+  updated(){
+    this.updates++,
+    console.log(this.updates)
+  }
+}) */
+
+
+let mixinUpdatesLoger = {
+  data: {
+    updates: 0
+  },
+  updated(){
+    this.updates++
+    console.log(this.updates)
+  }
+}
+
+new Vue({
+  el: '.simple1',
+  data: {
+    show: true
+  },
+  mixins: [mixinUpdatesLoger]
+});
+
+
+new Vue({
+  el: '.simple2',
+  data: {
+    show: false
+  },
+  mixins: [mixinUpdatesLoger]
+})
+
+
+</script>
+
+<style> 
+
+.container{
+  max-width: 400px;
+  margin: 100px auto;
+}
+.container__add{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.container__add .add__title{
+  padding-right: 10px;
+}
+
+.container__add .add__btn{
+  height: 25px;
+  width: 40px;
+  background: blue;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.container__input input{
+  height: 35px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 2px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  outline: none;
+}
+
+hr{
+  height: 1px;
+  border: none;
+}
+
+
+.container__btn{
+  padding-bottom: 20px;
+}
+
+.container__btn button{
+  height: 30px;
+  width: 100px;
+  background: green;
+  display: inline-block;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.container__result .result__title{
+  font-size: 30px;
+}
+
+.container__result ul {
+  padding-left: 0px;
+}
+.container__result ul li{
+  list-style-type: none; 
+  border: 1px solid #ddd; 
+  height: 35px; 
+  width: 100%; 
+  margin-bottom: 20px; 
+  padding: 8px 0px 15px 15px; 
+  box-sizing: border-box;
+}
+
+</style>
+
+
+</body>
+</html>

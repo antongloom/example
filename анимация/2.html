@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Анимация</title>
+</head>
+<body>
+	
+
+<div class="block"></div>
+
+<script>
+	let block = document.querySelector('.block');
+	block.addEventListener('click', onClick);
+	function onClick(){
+		block.className += ' animated';
+	}
+</script>
+
+<style>
+	.block{
+		width: 100px;
+		height: 100px;
+		background: #ff0;
+		border: 2px solid #00f;
+		opacity: 0.8;
+		position: absolute;
+		left: 30px;
+		top: 30px;
+		animation: backmove 2s infinite cubic-bezier(.36,-0.62,.53,1.63) paused;
+	}
+
+	.block.animated{
+		animation-play-state: running;
+	}
+
+	
+
+	@keyframes backmove{
+		0%{
+			left: 30px; background: #ff0;
+		}
+		50%{
+			left: 500px; background: #0f0;
+		}
+		100%{
+			left: 30px; background: #ff0;
+		}
+	}
+
+</style>
+
+
+</body>
+</html>

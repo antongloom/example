@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры по Vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div class="simple">
+  <button @click = "show = !show">Первый</button>
+  <transition  mode="out-in"
+               enter-active-class="animated tada"
+               leave-active-class="animated bounceOutDown">
+    <div class="text" v-if="show" key="success">
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+    </div>
+    <div class="text-two" v-else key="danger">
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+    </div>
+  </transition>
+</div>
+
+
+
+<script>  
+
+new Vue({
+  el: '.simple',
+  data: {
+    show: true
+  },
+  computed: {
+    
+  }
+})
+
+
+</script>
+
+<style> 
+
+.text{
+  background: green;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.text-two{
+  background: red;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+
+
+
+
+</style>
+
+
+</body>
+</html>

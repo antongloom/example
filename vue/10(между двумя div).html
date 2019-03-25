@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Примеры по Vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+<div class="simple">
+  <button @click = "show = !show">Первый</button>
+  <transition name="boom" appear mode="out-in">
+    <div class="text" v-if="show" key="success">
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+    </div>
+    <div class="text-two" v-else key="danger">
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+      <div>Some text about some</div>
+    </div>
+  </transition>
+</div>
+
+
+
+<script>  
+
+new Vue({
+  el: '.simple',
+  data: {
+    show: true
+  },
+  computed: {
+    
+  }
+})
+
+
+</script>
+
+<style> 
+
+.text{
+  background: green;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.text-two{
+  background: red;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.boom-enter{  /*Задается на секунду совершения анимации*/
+  
+}
+
+.boom-enter-active{ /*Жив в течении всей анимации*/
+  animation: slideIn 0.5s;
+}
+
+.boom-enter-to{
+
+}
+
+.boom-leave{
+
+}
+
+.boom-leave-active{
+  animation: slideOut 0.5s;
+}
+
+.boom-leave-to{
+
+}
+
+@keyframes slideIn{
+  from{transform: translateX(100vw);}
+  to{transform: translateX(0px);}
+}
+
+@keyframes slideOut{
+  from{transform: translateX(0px);}
+  to{transform: translateX(-100vw);}
+}
+
+
+
+
+</style>
+
+
+</body>
+</html>
