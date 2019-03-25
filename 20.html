@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Практика js</title>
+</head>
+<body>
+
+<input type="text" id="input">
+<p id="output"></p>
+
+<script>
+
+var input = document.getElementById('input'),
+	output = document.getElementById('output');
+
+input.addEventListener('keyup',function(){
+	output.innerHTML = this.value;
+})
+	
+</script>
+<style>
+	
+</style>	
+
+
+
+</body>
+</html>
