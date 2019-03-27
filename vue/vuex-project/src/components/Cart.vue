@@ -1,21 +1,26 @@
 <template>
   <div>
-    {{ cnt }}
+    <div>Count: {{ cnt }}</div>
+    <div>Total: {{ total }}</div>
   </div>
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex';
 
 export default {
   components: {
     
   },
-  computed: {
+  computed: mapGetters([
+      'cnt',
+      'total'
+    ])
+  /*computed: {
     cnt(){
-      return this.$store.state.cnt
+      return this.$store.getters.cnt
     }
-  }
+  }*/
 }
 </script>
 
