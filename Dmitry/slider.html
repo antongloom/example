@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+</head>
+<body>
+
+<div class="section-gallery">
+	<div class="gallery__item">
+		<img class="item__show" src="img/1.jpg" alt="Img">
+		<img src="img/2.jpg" alt="Img">
+		<img src="img/3.jpg" alt="Img">
+		<img src="img/4.jpg" alt="Img">
+		<img src="img/5.jpg" alt="Img">
+		<img src="img/6.jpg" alt="Img">
+		<img src="img/7.jpg" alt="Img">
+	</div>
+	<div class="gallery__btn">
+		<div id="prev" class="btn">Назад</div>
+		<div id="next" class="btn">Вперед</div>
+	</div>
+</div>
+
+<script>
+
+window.onload = function(){
+	var items = document.querySelectorAll('.gallery__item img');
+	var i = 0;
+
+	var prev = document.getElementById('prev');
+	var next = document.getElementById('next');
+
+	
+	prev.onclick = function(){
+		items[i].className = '';
+		i--;
+		if(i < 0){
+			i = items.length - 1;
+		}
+		items[i].className = 'item__show';
+	}
+
+
+	next.onclick = function(){
+		items[i].className = '';
+		i++;
+		if(i >= items.length){
+			i = 0;
+		}
+		items[i].className = 'item__show';
+	}
+
+}
+	
+</script>
+
+<style>	
+
+.section-gallery{
+	max-width: 700px;
+	margin: 50px auto;
+}
+
+.section-gallery .gallery__item{
+	height: 500px;
+	position: relative;
+}
+
+.section-gallery .gallery__item img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.section-gallery .gallery__item .item__show{
+	opacity: 1;
+}
+
+.section-gallery .gallery__btn{
+	text-align: center;
+}
+
+.btn{
+	display: inline-block;
+	margin: 20px;
+	width: 100px;
+	height: 35px;
+	background: #006400;
+	line-height: 35px;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	transition: background .3s ease;
+}
+
+.btn:hover{
+	background: #006452;
+}
+
+
+
+</style>
+	
+</body>
+</html>
