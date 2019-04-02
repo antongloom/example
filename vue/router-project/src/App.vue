@@ -35,11 +35,11 @@
 </template>
 
 <script>
-import AppCart from './components/Cart'  
-import AppCheckout from './components/Checkout'   
-import AppE404 from './components/E404'  
-import AppProduct from './components/Product'
-import AppProductList from './components/ProductList'
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';   
+import E404 from './components/E404';  
+import Product from './components/Product';
+import ProductList from './components/ProductList';
 export default {
   data(){
     return{
