@@ -26,7 +26,7 @@
             </ul>
           </div>
           <div class="col col-sm-9">
-            <router-view></router-view>
+              <router-view></router-view>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';   
 import E404 from './components/E404';  
 import Product from './components/Product';
-import ProductList from './components/ProductList';
+import ProductsList from './components/ProductsList';
 export default {
   data(){
     return{
@@ -54,7 +54,7 @@ export default {
     Checkout,
     E404,
     Product,
-    ProductList
+    ProductsList
   },
   methods: {
    
