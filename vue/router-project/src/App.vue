@@ -20,9 +20,14 @@
         <div class="row">
           <div class="col col-sm-3 menu">
             <ul class="list-group">
-              <li class="list-group-item">Products</li>
-              <li class="list-group-item">Cart</li>
-              <li class="list-group-item">Checkout</li>
+              <router-link v-for="(item, index) in menuList"
+                           :key="index"
+                           :to="item.url"
+                           tag="li"
+                           class="list-group-item"
+                           active-class="active">
+              <a>{{item.text}}</a>
+              </router-link>
             </ul>
           </div>
           <div class="col col-sm-9">
@@ -40,6 +45,9 @@ import Checkout from './components/Checkout';
 import E404 from './components/E404';  
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
+
+import {mapGetters} from 'vuex';
+
 export default {
   data(){
     return{
@@ -47,7 +55,12 @@ export default {
     }
   },
   computed: {
-    
+    ...mapGetters('menu', {
+        menuList: 'items'
+    })
+   /* menuList(){
+      return this.$store.getters['menu/items'];
+    } */
   },
   components: {
     Cart,

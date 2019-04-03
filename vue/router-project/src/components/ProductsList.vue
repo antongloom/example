@@ -1,16 +1,45 @@
 <template>
 	<div>
 		<h1>Products</h1>
-		<hr>
+		<div class="row">
+			<div class="col col-sm-4"
+				 v-for="product in products">
+				 <h3>{{product.title}}</h3>
+				 <div>{{product.price}}</div>
+				 <button class="btn btn-primary"
+				 		 @click="addToCart(product.id_product)">
+				 	Add to cart
+				 </button>
+				 <button class="btn btn-warning">Remove to cart</button>
+			</div>	
+		</div>
 	</div>
 </template>
 
 <script>
+	import {mapGetters} from 'vuex';
+	import {mapActions} from 'vuex';
 	export default{
 		data(){
 			return{
 				
 			}
+		},
+		computed: {
+			...mapGetters('products',{
+				products: 'items'
+			})
+		},
+		methods: {
+			...mapActions('cart',{
+				addToCart: 'add'
+			})
 		}
 	}
 </script>
+
+<style scoped>
+	.row{
+		padding-left: 15px;
+	}
+</style>
