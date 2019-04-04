@@ -8,7 +8,7 @@
           </div>
           <div class="col col-sm-3">
             <div class="alert alert-default">
-              <div>In Cart: </div>
+              <div>In Cart: {{LengthInCart}}</div>
             </div>
           </div>
         </div>
@@ -57,6 +57,9 @@ export default {
   computed: {
     ...mapGetters('menu', {
         menuList: 'items'
+    }),
+    ...mapGetters('cart', {
+        LengthInCart: 'cnt'
     })
    /* menuList(){
       return this.$store.getters['menu/items'];
