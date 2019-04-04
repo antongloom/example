@@ -15,8 +15,10 @@ export default {
 			}
 		},
 		remove(state, id_product){
-			if(state.products.indexOf(id_product) === -1){
-				state.products.push(id_product);
+			let pos = state.products.indexOf(id_product);
+
+			if(pos !== -1){
+				state.products.splice(pos, 1);
 			}
 		}
 	},
