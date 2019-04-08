@@ -1,0 +1,1 @@
+[{"id_product": 1, "title": "Iphone5", "price": 20000}, {"id_product": 2, "title": "Iphone6", "price": 25000}, {"id_product": 3, "title": "Iphone7", "price": 30000}]
