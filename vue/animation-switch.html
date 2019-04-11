@@ -1,0 +1,227 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face{font-family:"CenturyGothic-Bold";
+src: url(/fonts/CenturyGothic-Bold/CenturyGothic-Bold.woff2) format('woff'),
+url(/fonts/CenturyGothic-Bold/CenturyGothic-Bold.eot),
+url(/fonts/CenturyGothic-Bold/CenturyGothic-Bold.otf),
+url(/fonts/CenturyGothic-Bold/CenturyGothic-Bold.svg),
+url(/fonts/CenturyGothic-Bold/CenturyGothic-Bold.ttf);
+}
+
+.banner{
+	width: 600px;
+	height: 300px;
+	box-sizing: border-box;
+	margin: 100px auto;
+	position: relative;
+	//overflow: hidden;
+	.banner__block{
+		height: 300px;
+		width: 50px;
+		box-sizing: border-box;
+		background: blue;
+		position: absolute;
+		right: 0;
+		z-index: 10;
+		transition: all 1s ease;
+	}
+	.banner__content{
+		position: absolute;
+	}
+	.banner__content--first{
+		background: red;
+		height: 100%;
+		width: 100%;
+	}
+	.banner__content--second{
+		background: green;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.click{
+	height: 30px;
+	width: 100px;
+	background: green;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	margin: 20px auto;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Мобильное продвижение</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='dist/style.css'>
+    <link rel='stylesheet' href='src/css/owl.carousel.css'>
+    <link rel='stylesheet' href='src/css/owl.theme.default.css'>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <div>
+    <div class="banner">
+        <div :class="{arrow: active}" class="banner__block"></div>
+      <transition name="fade"  mode="in-out">
+      <div v-if="show" class="banner__content banner__content--first" key="save">
+            <div class="content__title"></div>
+      </div>
+      <div v-else class="banner__content banner__content--second" key="edit">
+            <div class="content__title"></div>
+      </div>
+    </transition>
+    </div>
+    <div @click="onClick" class="click">Нажать</div>
+  </div>
+</div>
+
+
+
+
+<script>  
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    show: true,
+    active: false
+  },
+  methods: {
+    onClick(){
+      this.show = !this.show
+      this.active = !this.active
+    }
+  }
+})
+
+
+
+
+</script>
+
+<style> 
+.fade-enter-active {
+ animation: slideIn 1s;
+}
+.fade-leave-active {
+  animation: slideOut 1s;
+}
+
+
+
+
+.arrow{
+  transform: translateX(-550px);
+  background: yellow!important;
+  transition: all 1s ease;
+}
+
+@keyframes slideIn{
+  from{transform: translateX(100%);}
+  to{transform: translateX(0px);}
+}
+
+@keyframes slideOut{
+  from{transform: translateX(0px);}
+  to{transform: translateX(0%);}
+}
+
+
+
+
+</style>
+
+    
+
+<script src="dist/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script>
+
+
+   
+
+/*     
+
+       $('.specialists').owlCarousel({
+      loop:true,
+      margin:10,
+      slideSpeed: 4000,
+      nav:true,
+      autoplayTimeout: 4500,
+      responsive:{
+          0:{
+              items:1
+          },
+          768:{
+              items:2
+          },
+          992:{
+              items:3
+          },
+          1200:{
+              items:3
+          },
+          1600:{
+              items:3
+          },
+          1900:{
+              items:3
+          },
+          1920:{
+              items:3
+          }
+      }
+  })
+
+$('.comments__content').owlCarousel({
+      loop:true,
+      margin:10,
+      slideSpeed: 4000,
+      nav:true,
+      autoplayTimeout: 4500,
+      responsive:{
+          0:{
+              items:1
+          },
+          768:{
+              items:1
+          },
+          992:{
+              items:1
+          },
+          1200:{
+              items:1
+          },
+          1600:{
+              items:1
+          },
+          1900:{
+              items:1
+          },
+          1920:{
+              items:1
+          }
+      }
+  })
+*/
+
+
+
+    </script> 
+</body>
+</html>
