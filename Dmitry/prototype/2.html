@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Прототипы</title>
+</head>
+<body>
+	<div>
+		<input type="text" class="item">
+	</div>
+	<div>
+		<input type="text" class="item">
+	</div>
+	<div>
+		<input type="text" class="item">
+	</div>
+</body>
+<script>
+/*	var items = document.querySelectorAll('.item');
+	
+	for(var i = 0; i < items.length; i++){
+		items[i].addEventListener('focus', function(){
+			this.style.border = '2px solid red';
+		})
+	}
+
+	for(var i = 0; i < items.length; i++){
+		items[i].addEventListener('blur', function(){
+			this.style.border = '1px solid #ccc';
+		})
+	} */
+
+class ${
+		constructor(selector){
+			this.elem = document.querySelectorAll(selector)
+		}
+		on(event, callback){
+			for(var i = 0; i < this.elem.length; i++){
+				this.elem[i].addEventListener(event, callback)
+			}
+		}
+	}
+
+	var elems = new $('.item');
+	elems.on('focus', function(){
+		this.style.border = '2px solid red';
+	})
+	elems.on('blur', function(){
+		this.style.border = '2px solid #ccc';
+	}) 
+
+
+	/*class ${
+		constructor(selector){
+			this.elem = document.querySelectorAll(selector)
+		}
+		on(event, callback){
+			for(var i = 0; i < this.elem.length; i++){
+				this.elem[i].addEventListener(event, callback)
+			}
+			return this;
+		}
+	}
+
+	(new $('.item')).on('focus', function(){
+		this.style.border = '2px solid red';
+	}).on('blur', function(){
+		this.style.border = '2px solid #ccc';
+	}) */
+
+
+/*
+for(var i=0; i < 10; i++){
+	setTimeout(function(){
+		console.log(i);
+	},i*1000);
+}*/
+
+</script>
+<style>
+	
+</style>
+</html>

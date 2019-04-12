@@ -9,6 +9,43 @@
 </body>
 <script>
 	
+class Animal {
+	constructor(age, color){
+			this.age = age;
+			this.color = color;
+		}
+		eat(){
+			return 1;
+		}
+	}
+
+class Cat extends Animal {
+	constructor(age, color, mustache){
+		super(age, color);
+		this.mustache = mustache;
+	}
+	voice(){
+		return 'maymay';
+	}
+}
+
+class Dog extends Animal {
+	constructor(age, color, temper){
+		super(age, color);
+		this.temper = temper;
+	}
+	voice(){
+		return 'gavgav';
+	}
+}
+
+var dog1 = new Dog(12,'green', 'calm');
+console.log(dog1);
+console.log(dog1.eat());
+
+
+
+
 </script>
 <style>
 	
