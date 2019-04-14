@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "Roboto-regular";
+    src: url(./fonts/Roboto-regular/Roboto-regular.ttf),
+    url(./fonts/Roboto-regular/Roboto-regular.eot),
+    url(./fonts/Roboto-regular/Roboto-regular.otf),
+    url(./fonts/Roboto-regular/Roboto-regular.svg),
+    url(./fonts/Roboto-regular/Roboto-regular.woff),
+    url(./fonts/Roboto-regular/Roboto-regular.woff2);
+}
+
+@font-face {
+    font-family: "Roboto-light";
+    src: url(./fonts/Roboto-light/Roboto-light.ttf),
+    url(./fonts/Roboto-light/Roboto-light.eot),
+    url(./fonts/Roboto-light/Roboto-light.otf),
+    url(./fonts/Roboto-light/Roboto-light.svg),
+    url(./fonts/Roboto-light/Roboto-light.woff),
+    url(./fonts/Roboto-light/Roboto-light.woff2);
+}
+
+@font-face {
+    font-family: "Roboto-bold";
+    src: url(./fonts/Roboto-bold/Roboto-bold.ttf),
+    url(./fonts/Roboto-bold/Roboto-bold.eot),
+    url(./fonts/Roboto-bold/Roboto-bold.otf),
+    url(./fonts/Roboto-bold/Roboto-bold.svg),
+    url(./fonts/Roboto-bold/Roboto-bold.woff),
+    url(./fonts/Roboto-bold/Roboto-bold.woff2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*Уьирает стрелки у типа number*/
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.text{
+  font-family: "Roboto-light";
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.title{
+  font-family: "Roboto-bold";
+  font-size: 22px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.underline{
+  width: 50px;
+  height: 1px;
+  display: inline-block;
+  background-color: #655c80;
+  margin-top: 20px;
+}
+
+.btn{
+  height: 40px;
+  width: 140px;
+  box-sizing: border-box;
+  border: 1px solid #00e0d0;
+  line-height: 40px; 
+  border-radius: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto-bold";
+  font-size: 16px;
+  color: #00e0d0;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: inline-block;
+  background: inherit;
+  outline: none;
+  &:hover{
+    background: #00e0d0;
+    color: #000;
+  }
+}
+
+
+
+.button-burger{
+  display: none;
+  position: relative;
+  width: 34px;
+  height: 17px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  top: 10px;
+    .line {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 4px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+   }
+    .line-1 {
+      top: 0%;
+      }
+    .line-2 {
+      top: 50%;
+    }
+    .line-3 {
+      top: 100%;
+    }
+}
+
+.active{
+  .line-1{
+    -webkit-transform: translateY(8.33px) translateX(0) rotate(45deg);
+    transform: translateY(8.33px) translateX(0) rotate(45deg);
+  }
+  .line-2{
+    opacity: 0;
+  }
+  .line-3{
+    -webkit-transform: translateY(-8.33px) translateX(0) rotate(-45deg);
+    transform: translateY(-8.33px) translateX(0) rotate(-45deg);
+  }
+}
+
+.navbar-list{
+	display: none;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  background-color: #fff;
+  text-align: center;
+  padding-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+  li{
+  	list-style-type: none;
+    padding-top: 10px;
+  	a{
+  		text-decoration: none;
+  		font-family: "Roboto-regular";
+  		color: #000;
+  	}
+  }
+}
+
+.activeList{
+	display: block;
+}
+
+
+
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+  
+}
+@media screen and (max-width: 768px){
+  .button-burger{display: block;}
+}
+@media screen and (max-width: 480px){
+  
+}
