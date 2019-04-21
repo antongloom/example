@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise</title>
+</head>
+<body>
+
+<script>
+	/*function applyForVisa(document, reslolve){
+		console.log('Обработка заявления...');
+		setTimeout(function(){
+			let visa = {};
+			reslolve(visa);
+		}, 2000)
+	} 
+
+	applyForVisa({},function(visa){
+		console.info('Виза получена');
+	}) */
+
+   /*function applyForVisa(document, reslolve,reject){
+		console.log('Обработка заявления...');
+		setTimeout(function(){
+			Math.random() > .5 ? reslolve({}) : reject('Нехватка документов!')
+		}, 2000)
+	} 
+
+	applyForVisa({},function(visa){
+		console.info('Виза получена');
+	},
+	function(reason){
+		console.error(reason);
+	}); */
+
+	/*Промисы*/
+
+	/*function applyForVisa(document){
+		console.log('Обработка заявления...');
+		let promise = new Promise(function(resolve, reject){
+			setTimeout(function(){
+				Math.random() > .5 ? resolve({}) : reject('Нехватка документов!')
+			}, 2000)
+		});
+		return promise;
+	} 
+
+	applyForVisa({})
+		.then(
+			function(visa){
+				console.info('Виза получена'); 
+			},
+			function(reason){
+				console.error(reason);
+			});*/
+
+
+
+	/*function applyForVisa(document){
+		console.log('Обработка заявления...');
+		let promise = new Promise(function(resolve, reject){
+			setTimeout(function(){
+				Math.random() > .5 ? resolve({}) : reject('Нехватка документов!')
+			}, 2000)
+		});
+		return promise;
+	} 
+
+	applyForVisa({})
+		.then(visa => console.info('Виза получена'),
+			  reason => console.error(reason)); */
+
+/*
+	function applyForVisa(document){
+		console.log('Обработка заявления...');
+		let promise = new Promise(function(resolve, reject){
+			setTimeout(function(){
+				Math.random() > .5 ? resolve({}) : reject('Нехватка документов!')
+			}, 2000)
+		});
+		return promise;
+	} 
+
+	function bookHotel() {
+		console.log('Бронируем отель');
+	}
+
+	function buyTickets() {
+		console.log('Покупаем билеты');
+	}
+
+	applyForVisa({})
+		.then(visa => console.info('Виза получена'))
+		.then(bookHotel)
+		.then(buyTickets)
+		.catch(error => console.error(error));
+	*/
+
+
+		/*Возвращаем visa*/
+/*		function applyForVisa(document){
+		console.log('Обработка заявления...');
+		let promise = new Promise(function(resolve, reject){
+			setTimeout(function(){
+				Math.random() > 0 ? resolve({}) : reject('Нехватка документов!')
+			}, 2000)
+		});
+		return promise;
+	} 
+
+	function bookHotel(visa) {
+		console.log(visa);
+		console.log('Бронируем отель');
+	}
+
+	function buyTickets() {
+		console.log('Покупаем билеты');
+	}
+
+	applyForVisa({})
+		.then(visa => {
+			 console.info('Виза получена');
+			 return visa;
+		})
+		.then(bookHotel)
+		.then(buyTickets)
+		.catch(error => console.error(error));
+			  		  
+*/
+
+
+		function applyForVisa(document){
+		console.log('Обработка заявления...');
+		let promise = new Promise(function(resolve, reject){
+			setTimeout(function(){
+				Math.random() > 0 ? resolve({}) : reject('Нехватка документов!')
+			}, 2000)
+		});
+		return promise;
+	} 
+
+	function getVisa(visa){
+		console.info('Виза получена');
+		return visa;
+	}
+
+	function bookHotel(visa) {
+		console.log(visa);
+		console.log('Бронируем отель');
+	}
+
+	function buyTickets() {
+		console.log('Покупаем билеты');
+	}
+
+	applyForVisa({})
+		.then(getVisa)
+		.then(bookHotel)
+		.then(buyTickets)
+		.catch(error => console.error(error));
+			  		  
+
+		  
+
+	
+
+</script>
+	
+</body>
+</html>
